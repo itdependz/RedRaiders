@@ -24,7 +24,47 @@ void AutonSelector::scoreTaxi() {
   arm->setIntake(-1);
   delay(500);
   arm->setIntake(0);
+  arm.set('s');
   drive->tankDrive(-0.5, -0.5);
   delay(3000);
+  drive->set(0, 0);
+}
+void AutonSelector::scoreTaxiCharge() {
+  arm.set('h');
+  drive->tankDrive(0, 0);
+  delay(500);
+  arm->setIntake(-1);
+  delay(500);
+  arm->setIntake(0);
+  arm.set('s');
+  drive->tankDrive(-0.5, -0.5);
+  delay(3000);
+  drive->set(0.5, 0.5);
+  delay(1200);
+  drive->set(0,0);
+}
+void AutonSelector::scoreTwo() {
+  arm.set('h');
+  drive->tankDrive(0, 0);
+  delay(500);
+  arm->setIntake(-1);
+  delay(500);
+  arm->setIntake(0);
+  arm.set('f');
+  drive->tankDrive(-0.5, -0.5);
+  arm->setIntake(1);
+  delay(3000);
+  arm->setIntake(0);
+  arm.set('s');
+  drive->tankDrive(0.5, 0.5);
+  delay(2500);
+  drive->tankDrive(0.25, 0.25);
+  arm.set('m');
+  delay(1000);
+  drive->tankDrive(0, 0);
+  delay(100);
+  arm->setIntake(-1);
+  delay(1000);
+  arm->setIntake(0);
   drive->set(0, 0);
 }
