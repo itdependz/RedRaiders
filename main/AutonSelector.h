@@ -16,6 +16,8 @@ class AutonSelector {
     void scoreTaxi();
     void scoreTaxiCharge();
     void scoreTwo();
+    void scoreTwoGetOneOutSide();
+    void scoreTwoGetOneInSide();
 
   public:
     AutonSelector(NoU_Drivetrain* drivetrain);
